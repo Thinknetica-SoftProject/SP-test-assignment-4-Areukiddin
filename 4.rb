@@ -16,4 +16,22 @@
 #
 ## Решение:
 
+data = File.readlines('./data/4.txt')
 
+result = 0
+
+def sides_order(str) 
+   str.split('x').map(&:to_i).sort!
+  end
+
+def calc_amount(length, width, height) 
+   2 * width * length + 2 * length * height + 2 * height * width + length * width
+end
+
+data.each do |d| 
+   box_sides = sides_order(d)
+
+  result += calc_amount(box_sides[0], box_sides[1], box_sides[2])
+end
+
+puts result

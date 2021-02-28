@@ -10,4 +10,15 @@
 #
 ## Решение:
 
+data = File.new('./data/3.txt', "r:UTF-8").readlines
 
+result = 0
+
+data.each do |str|
+  nums_array = str.split(' ').map(&:to_i)
+
+  min_max_diff = nums_array.max - nums_array.min
+  result += min_max_diff
+end
+
+puts result

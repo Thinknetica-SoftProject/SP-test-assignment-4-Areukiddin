@@ -16,6 +16,18 @@
 #
 ## Решение:
 
+floor = 0
 
+data = File.read('data/1.txt').strip
+
+data.each_char do |d|
+  if d == '('
+    floor += 1
+  elsif d == ')'
+    floor -= 1
+  end
+end
+
+puts floor
 
 
